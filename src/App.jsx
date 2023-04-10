@@ -8,26 +8,17 @@ export default function App() {
     setRandomNumbers([Math.round(Math.random() * 100), ...randomNumbers]);
   };
 
-  const removeFirst = () => {
-    randomNumbers.shift();
-    setRandomNumbers([...randomNumbers]);
-  };
-  const removeLast = () => {
-    randomNumbers.pop();
-    setRandomNumbers([...randomNumbers]);
-  };
 
   return (
     <div>
       <button onClick={addOnMoreNumber}>Add One More</button>
       <hr />
-      <button onClick={removeFirst}>Remove First</button>
-      <button onClick={removeLast}>Remove Last</button>
-      <ul>
+      
+      <table border="1px">
         {randomNumbers.map((number) => (
-          <li className="list">{number}</li>
+          <tr className="list">{number}</tr>
         ))}
-      </ul>
+      </table>
     </div>
   );
 }
